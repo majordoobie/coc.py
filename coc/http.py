@@ -219,6 +219,7 @@ class HTTPClient:
     async def close(self):
         if self.__session:
             await self.__session.close()
+        time.sleep(0.25)
 
     async def request(self, route, **kwargs):
         method = route.method
